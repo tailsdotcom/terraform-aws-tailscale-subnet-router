@@ -50,12 +50,14 @@ variable "tailscale_auth_key_secret" {
 
 variable "tailscale_docker_repository" {
   type        = string
-  description = "The name of ECR repository where the Docker image stored"
+  description = "The name of container image repository where the Docker image stored"
+  default     = "ghcr.io/hardfinhq/terraform-aws-tailscale-subnet-router"
 }
 
 variable "tailscale_docker_tag" {
   type        = string
-  description = "The name of tag for the Docker image stored in ECR"
+  description = "The name of tag for the Docker image"
+  default     = "latest"
 }
 
 variable "enable_execute_command" {
