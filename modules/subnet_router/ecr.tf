@@ -15,8 +15,3 @@
 data "aws_ecr_repository" "tailscale" {
   name = var.tailscale_docker_repository
 }
-
-data "aws_ecr_image" "tailscale" {
-  repository_name = data.aws_ecr_repository.tailscale.name
-  image_tag       = var.tailscale_docker_tag
-}
