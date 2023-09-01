@@ -20,7 +20,7 @@ locals {
     advertise_routes   = join(",", concat([data.aws_vpc.ecs.cidr_block], var.additional_routes))
     additional_flags   = var.additional_flags
     auth_key_secret_id = data.aws_secretsmanager_secret.tailscale_auth_key.id
-    image              = "${data.aws_ecr_repository.tailscale.repository_url}:${var.tailscale_docker_tag}"
+    image_id           = "${data.aws_ecr_repository.tailscale.repository_url}:${var.tailscale_docker_tag}"
     volume_name        = local.tailscale_volume_name
     logs_group         = aws_cloudwatch_log_group.tailscale.name
     logs_region        = local.aws_region_name
