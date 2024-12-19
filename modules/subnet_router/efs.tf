@@ -38,7 +38,7 @@ resource "aws_efs_access_point" "tailscale" {
 }
 
 resource "aws_efs_mount_target" "primary" {
-  for_each = toset(data.aws_subnets.primary.ids)
+  for_each = toset(var.subnet_ids)
 
   file_system_id  = aws_efs_file_system.tailscale.id
   subnet_id       = each.key

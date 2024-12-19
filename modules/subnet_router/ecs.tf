@@ -86,6 +86,6 @@ resource "aws_ecs_service" "tailscale" {
   network_configuration {
     assign_public_ip = var.assign_public_ip
     security_groups  = var.security_group_ids
-    subnets          = data.aws_subnets.primary.ids
+    subnets          = var.subnet_ids
   }
 }

@@ -17,13 +17,3 @@ data "aws_vpc" "ecs" {
     Name = var.vpc
   }
 }
-
-data "aws_subnets" "primary" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.ecs.id]
-  }
-  tags = {
-    group = var.subnet_group
-  }
-}

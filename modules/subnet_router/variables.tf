@@ -23,9 +23,9 @@ variable "vpc" {
   description = "The name of the VPC where the subnet router ECS service will be launched"
 }
 
-variable "subnet_group" {
-  type        = string
-  description = "The group (tag) of the VPC subnets where the subnet router ECS service will be launched"
+variable "subnet_ids" {
+  type        = list(string)
+  description = "A list of VPC subnet ids where the subnet router ECS service will be launched"
 }
 
 variable "assign_public_ip" {

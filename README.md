@@ -82,27 +82,6 @@ data "aws_vpc" "sandbox" {
 
 We'd be open to accepting a `vpc_id` directly.
 
-### Subnet group
-
-The `subnet_group` variable is of note; it is used to filter subnets tagged
-with `group={subnet_group}`. This is a convention we use at Hardfin to group
-together subnets that are part of the same VPC (usually one subnet per AZ).
-In Terraform, this is determined via:
-
-```hcl
-data "aws_subnets" "primary" {
-  filter {
-    name   = "vpc-id"
-    values = ["vpc-51edfd86d3223cdff"]
-  }
-  tags = {
-    group = "sandbox-igw-zz-minotaur-7"
-  }
-}
-```
-
-We'd be open to accepting an `aws_subnet_ids` list directly.
-
 [1]: https://tailscale.com/kb/1019/subnets/
 [2]: https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html
 [3]: https://hub.docker.com/r/tailscale/tailscale
