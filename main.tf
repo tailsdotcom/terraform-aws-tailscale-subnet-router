@@ -15,19 +15,18 @@
 module "subnet_router" {
   source = "./modules/subnet_router"
 
-  name                        = var.name
-  vpc                         = var.vpc
-  subnet_group                = var.subnet_group
-  assign_public_ip            = var.assign_public_ip
-  security_group_ids          = var.security_group_ids
-  target_ecs_cluster          = var.target_ecs_cluster
-  tailscale_auth_key_secret   = var.tailscale_auth_key_secret
-  tailscale_docker_repository = var.tailscale_docker_repository
-  tailscale_docker_tag        = var.tailscale_docker_tag
-  enable_execute_command      = var.enable_execute_command
-  additional_routes           = var.additional_routes
-  cpu_architecture            = var.cpu_architecture
-  additional_flags            = var.additional_flags
-  cpu                         = var.cpu
-  memory                      = var.memory
+  name                      = var.name
+  vpc                       = var.vpc
+  subnet_group              = var.subnet_group
+  assign_public_ip          = var.assign_public_ip
+  security_group_ids        = var.security_group_ids
+  target_ecs_cluster        = var.target_ecs_cluster
+  tailscale_auth_key_secret = var.tailscale_auth_key_secret
+  tailscale_docker_image    = var.tailscale_docker_image
+  enable_execute_command    = var.enable_execute_command
+  additional_routes         = var.additional_routes
+  cpu_architecture          = var.cpu_architecture
+  additional_flags          = var.additional_flags
+  cpu                       = var.cpu
+  memory                    = var.memory
 }

@@ -56,14 +56,9 @@ variable "tailscale_auth_key_secret" {
   description = "The name of secret where the Tailscale auth key is stored"
 }
 
-variable "tailscale_docker_repository" {
+variable "tailscale_docker_image" {
   type        = string
-  description = "The name of ECR repository where the Docker image stored"
-}
-
-variable "tailscale_docker_tag" {
-  type        = string
-  description = "The name of tag for the Docker image stored in ECR"
+  description = "The registry and image tag of the docker image"
 }
 
 variable "enable_execute_command" {
